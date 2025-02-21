@@ -1,0 +1,24 @@
+body{
+    background-color: darkcyan;
+}
+
+.navbar{
+    padding: 10px;
+    background-image: linear-gradient(to left top,white 10%,#ef9fc6 90%);
+} 
+
+.logo-cls{
+    border-radius: 50%;
+}
+
+.sec1{
+    background-image: url('../images/product/banner2.jpg');
+    height: 50rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.nav{
+    background-color: transparent;
+}

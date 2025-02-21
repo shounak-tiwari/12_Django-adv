@@ -1,0 +1,15 @@
+{
+    "data 1": 
+    {
+        "Name":"Coffee",
+        "Price":100.50,
+        "stock":10
+    },
+
+    "data 2 " : 
+    {
+        "Name":"Tea",
+        "Price":10.50,
+        "stock":10
+    }
+}

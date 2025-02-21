@@ -1,0 +1,18 @@
+{% comment %} who we are file {% endcomment %}
+
+{% include "index.html" %}
+
+
+<table class="border border-dark">
+{% for x in key %}
+    <tr class="border border-dark">
+        <td class="border border-dark p-4">
+        {{x.Name}}
+        </td>
+        <td class="border border-dark p-4">
+        {{x.Dateofjoining}}
+        </td>
+        <td class="border border-dark p-4">
+        {{x.Role}}
+        </td>
+{% endfor %}

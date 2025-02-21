@@ -1,0 +1,147 @@
+-- sql : structure quary language (programming languege )
+-- create database 
+CREATE DATABASE StudentRecord;
+-- check databases 
+show databases;
+-- use database after created 
+use StudentRecord;
+-- you have to create your own database tables 
+create table Details(
+	id int primary key,-- unique element
+    Name char(255),
+    email char(255)
+);
+-- check table is created or not 
+show tables;
+-- details of table like thier data types and all
+desc Details; -- description of tables 
+
+-- single data insert into database 
+
+Insert into Details values (
+1001,
+"Akash Tiwari",
+"Akashtiwari@gmail.com"
+);
+
+--  multiple data insert into database 
+
+Insert into Details (id,name,email) values 
+	(1002,"Pushkar gurjar","pushkargurjar@gmail.com"),
+    (1003,"shivani patidart","shivanipatidart@gmail.com"),
+    (1004,"Kanika chouhan","Kanikachouhan@gmail.com");
+
+-- show tables details 
+
+select * from Details;
+
+
+
+-- delete database 
+-- drop 
+drop database demo_schema;
+
+
+
+
+-- create new database 
+CREATE DATABASE IF NOT EXISTS College;
+
+-- drop
+DROP DATABASE IF EXISTS College1;
+
+-- show databases 
+SHOW DATABASES;
+
+-- select or use database 
+USE College;
+
+-- all tables of college database 
+show tables;
+
+-- create tables;
+
+CREATE TABLE IF NOT EXISTS  PersonalDetails(
+	enrollment_number CHAR(255) PRIMARY KEY,
+    first_name CHAR(255) NOT NULL,
+    last_name CHAR(255) NOT NULL,
+    fathers_name CHAR(255) NOT NULL,
+    mother_name CHAR(255) NOT NULL,
+    email_address CHAR(255) NOT NULL,
+    contact_number BIGINT ,
+    address CHAR(255),
+    pincode INT,
+    city CHAR(100),
+    state CHAR(100),
+    country CHAR(100)
+);
+
+-- DESCRIPTIONS OF TABLES 
+desc PersonalDetails;
+
+
+INSERT INTO PersonalDetails (
+enrollment_number,
+first_name,
+last_name,
+fathers_name,
+mother_name,
+email_address,
+contact_number,
+address,
+pincode,
+city,
+state,
+country
+) values
+("python12pm1",
+"kanika",
+"chouhan",
+"mr.pushpraj",
+"mrs. savitree",
+"chouhan117.kc@gmail.com",
+9894939596,
+"indore",
+483320,
+"indore",
+"mp",
+"ind");
+
+
+
+
+INSERT INTO PersonalDetails (
+    enrollment_number,
+    first_name,
+    last_name,
+    fathers_name,
+    mother_name,
+    email_address,
+    contact_number,
+    address,
+    pincode,
+    city,
+    state,
+    country
+) VALUES
+    ('python12pm2', 'Amit', 'Sharma', 'Mr. Rajesh', 'Mrs. Sunita', 'amit.sharma@gmail.com', 9876543210, 'Bhopal', 462001, 'Bhopal', 'MP', 'India'),
+    ('python12pm3', 'Priya', 'Verma', 'Mr. Suresh', 'Mrs. Kavita', 'priya.verma@gmail.com', 9867543201, 'Jabalpur', 482002, 'Jabalpur', 'MP', 'India'),
+    ('python12pm4', 'Rohan', 'Gupta', 'Mr. Mahesh', 'Mrs. Anjali', 'rohan.gupta@gmail.com', 9856743102, 'Gwalior', 474001, 'Gwalior', 'MP', 'India'),
+    ('python12pm5', 'Sanya', 'Mishra', 'Mr. Dinesh', 'Mrs. Priyanka', 'sanya.mishra@gmail.com', 9845732103, 'Ujjain', 456001, 'Ujjain', 'MP', 'India'),
+    ('python12pm6', 'Vikram', 'Joshi', 'Mr. Ramesh', 'Mrs. Meena', 'vikram.joshi@gmail.com', 9834621094, 'Satna', 485001, 'Satna', 'MP', 'India'),
+    ('python12pm7', 'Neha', 'Tiwari', 'Mr. Anil', 'Mrs. Rekha', 'neha.tiwari@gmail.com', 9823510985, 'Rewa', 486001, 'Rewa', 'MP', 'India'),
+    ('python12pm8', 'Sourabh', 'Dubey', 'Mr. Prakash', 'Mrs. Geeta', 'sourabh.dubey@gmail.com', 9812409876, 'Ratlam', 457001, 'Ratlam', 'MP', 'India'),
+    ('python12pm9', 'Pallavi', 'Yadav', 'Mr. Subhash', 'Mrs. Archana', 'pallavi.yadav@gmail.com', 9801398765, 'Dewas', 455001, 'Dewas', 'MP', 'India'),
+    ('python12pm10', 'Raj', 'Singh', 'Mr. Harish', 'Mrs. Savita', 'raj.singh@gmail.com', 9790387654, 'Sagar', 470001, 'Sagar', 'MP', 'India'),
+    
+    -- Add 90 more records following the same pattern
+    ('python12pm11', 'Manish', 'Chaturvedi', 'Mr. Omprakash', 'Mrs. Sarita', 'manish.ch@gmail.com', 9789276543, 'Chhindwara', 480001, 'Chhindwara', 'MP', 'India'),
+    ('python12pm12', 'Ritika', 'Kushwaha', 'Mr. Satish', 'Mrs. Manju', 'ritika.kushwaha@gmail.com', 9778165432, 'Vidisha', 464001, 'Vidisha', 'MP', 'India'),
+    ('python12pm13', 'Rahul', 'Jain', 'Mr. Ashok', 'Mrs. Sudha', 'rahul.jain@gmail.com', 9767054321, 'Shivpuri', 473551, 'Shivpuri', 'MP', 'India'),
+    ('python12pm14', 'Megha', 'Agarwal', 'Mr. Vinod', 'Mrs. Seema', 'megha.agarwal@gmail.com', 9756943210, 'Hoshangabad', 461001, 'Hoshangabad', 'MP', 'India'),
+    ('python12pm15', 'Aditya', 'Bansal', 'Mr. Gopal', 'Mrs. Rekha', 'aditya.bansal@gmail.com', 9745832109, 'Neemuch', 458441, 'Neemuch', 'MP', 'India');
+
+
+-- show  data inside the tables
+
+select * from PersonalDetails;
