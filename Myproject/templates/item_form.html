@@ -1,0 +1,16 @@
+<h2>
+    {% if form.instance.id %}
+        Edit Items
+    {% else %}
+        Add New Item
+    {% endif %}
+</h2>
+
+<form method ="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type ="submit" > Save </button>
+</form>
+
+<a href="{% url 'item_list' %}"> Show items  </a>
+
