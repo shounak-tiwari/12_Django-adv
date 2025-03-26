@@ -1,0 +1,49 @@
+Authentication and authorization are two key security concepts in Django (and web development in general). Here’s how they differ:
+
+### 1. **Authentication (Who are you?)**
+   - Confirms the identity of a user.
+   - Ensures that users provide valid credentials (e.g., username and password).
+   - Django handles authentication via `django.contrib.auth`, which provides:
+     - User model (`User` from `django.contrib.auth.models`)
+     - Authentication backends (e.g., `authenticate()`, `login()`, `logout()`)
+     - Built-in authentication views (e.g., login, logout, password reset)
+
+   **Example:**
+   ```python
+   from django.contrib.auth import authenticate, login
+
+   user = authenticate(username='john', password='secret')
+   if user is not None:
+       login(request, user)  # User is authenticated
+   ```
+
+---
+
+### 2. **Authorization (What can you do?)**
+   - Determines what actions an authenticated user is allowed to perform.
+   - Based on user roles and permissions.
+   - Django provides a permissions system where each user or group can have specific permissions (e.g., `can_add_post`, `can_delete_user`).
+   - Uses decorators like `@permission_required` and `@login_required`.
+
+   **Example:**
+   ```python
+   from django.contrib.auth.decorators import permission_required
+
+   @permission_required('app_name.can_add_post', raise_exception=True)
+   def create_post(request):
+       # Only users with the 'can_add_post' permission can access this view
+       pass
+   ```
+
+---
+
+### **Key Differences:**
+| Feature            | Authentication | Authorization |
+|-------------------|---------------|--------------|
+| **Purpose**      | Verifies identity | Determines access rights |
+| **Question**     | "Who are you?" | "What can you do?" |
+| **Implemented Using** | `authenticate()`, `login()`, `logout()` | Permissions, groups, `@permission_required` |
+| **User Required?** | Yes | Only after authentication |
+| **Example** | Logging in | Checking if user can edit/delete content |
+
+Would you like a practical implementation example of both in Django? 🚀
